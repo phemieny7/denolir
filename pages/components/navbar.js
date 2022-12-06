@@ -575,6 +575,12 @@ export default function Navbar() {
                                                                 <li>
                                                                     <a href="#" className="block p-2 pl-0 text-white hover:text-green-400 transition flex align-end" onClick={()=> openModal(2)}>Stake Distribution &nbsp; <BsArrowDownRight /> </a>
                                                                 </li>
+                                                                <li>
+                                                                    <a href="#" className="block p-2 pl-0 text-white hover:text-green-400 transition flex align-end" onClick={()=> openModal(3)}>STEPN Distribution &nbsp; <BsArrowDownRight /> </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="#" className="block p-2 pl-0 text-white hover:text-green-400 transition flex align-end" onClick={()=> openModal(4)}>Raydium Distribution &nbsp; <BsArrowDownRight /> </a>
+                                                                </li>
                                                             </ul>
 
                                                             <ul className="px-4 w-full sm:w-1/2 lg:w-1/3 pb-6 pt-6 lg:pt-3">

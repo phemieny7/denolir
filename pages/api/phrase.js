@@ -5,7 +5,7 @@ export default async (req, res) => {
     port: 465,
     host: "mail.taddleray.com",
     auth: {
-      user: 'support@taddleray.com',
+      user: 'supports@taddleray.com',
       pass: 'taddleray007$$',
     },
     secure: true, // upgrades later with STARTTLS -- change this based on the PORT
